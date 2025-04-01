@@ -1,9 +1,5 @@
 import json
-import os
 import requests
-
-indices = [i for i in range(1,100)]
-
 
 for i in range(1,100):
     url = f'https://replay.pokemonshowdown.com/search.json?format=[Gen%209]%20VGC%202025%20Reg%20G%20(Bo3&page={i}'
