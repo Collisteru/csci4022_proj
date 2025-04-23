@@ -66,3 +66,4 @@ for battle_id in battle_data.namelist():
 output_path = os.path.join(script_directory, "battle_summaries.json")
 with open(output_path, 'w') as output:
     json.dump(battle_summaries, output)
+    output.close()

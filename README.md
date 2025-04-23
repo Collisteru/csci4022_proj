@@ -8,8 +8,9 @@ Analysis of the Pokémon Showdown Competitive Scene
 ## Coding Logistics:
 
 - Do ./source/Activate to activate the virtual environment (Windows 11 + VSCode + WSL, may be different on your machine)
-
-
+- If you wish to reproduce these results without already having the zip and json files created, the correct order to run the files is:
+[`battle_id_scraper.py`](battle_id_scraper.py), [`battle_data_scraper.py`](battle_data_scraper.py), [`battle_data_congregator.py`](battle_data_congregator.py), [`stat_scraper.py`](stat_scraper.py), [`centroid_finder.py`](centroid_finder.py)
+- Also note that collecting these data yourself may introduce problems in the stat_scraper file as many Pokémon names had to be manually corrected
 
 ## Sources:
 
@@ -17,7 +18,7 @@ Analysis of the Pokémon Showdown Competitive Scene
 https://github.com/smogon/pokemon-showdown-client/blob/master/WEB-API.md
 
 
-API Search URL:
+* API Search URL:
 https://replay.pokemonshowdown.com/search.json?format=[Gen%209]%20VGC%202025%20Reg%20G%20(Bo3
 
 * Single Battle Example:
