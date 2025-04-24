@@ -36,6 +36,10 @@ https://replay.pokemonshowdown.com/search.json?format=[Gen%209]%20VGC%202025%20R
 
 - Code a scaper to get all the data from each of these battles. 
 
+## Notes on Data:
+
+In pokemon_stats.json, the order of stats is the default order of [HP, ATTACK, DEFENSE, SPECIAL ATTACK, SPECIAL DEFENSE, SPEED]
+
 ## Data Collection Questions:
 
 * What is the minimum timestamp of a battle?
