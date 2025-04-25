@@ -2,12 +2,13 @@ import json
 import os
 from statistics import mean
 
-
-
 script_directory = os.path.dirname(os.path.abspath(__file__))
 battle_summaries_path = os.path.join(script_directory, "battle_summaries.json")
 pokemon_stats_path = os.path.join(script_directory, "pokemon_stats.json")
 team_centroids_path = os.path.join(script_directory, "team_centroids.json")
+
+# Given time, consider modifying this code to have 
+
 # This creates the file if it doesn't already exist,
 # or erases its contents if it does exist
 open(team_centroids_path, 'w').close()
