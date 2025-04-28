@@ -46,17 +46,17 @@ def get_scores_from_wins_losses():
 
     with open(path, 'r') as f:
         data = json.load(f)
-        team_win_rate = {}
+        output = []
         for team, record in data.items():
             wins = record["wins"]
             losses = record["losses"]
             total = wins + losses
             win_rate = (wins + 1) / (wins + losses + 2) if total > 0 else 0
-            team_win_rate[team] = win_rate
+            output.append([team, win_rate])
 
         output_path = "./team_scores.json"
-        with open(output_path, 'w') as output:
-            json.dump(team_win_rate, output)
+        with open(output_path, 'w') as output_file:
+            json.dump(output, output_file)
             output.close()
 
 get_scores_from_wins_losses()
