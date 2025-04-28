@@ -39,8 +39,10 @@ def get_team_wins_losses():
             output.close()
 
 
-def get_win_rates_from_wins_losses():
+def get_scores_from_wins_losses():
     path  = "./team_wins_losses.json" 
+
+    # Apply the Wilson Score interval correction (Binomial proportion confidence interval) to deal with the varying sample sizes of various teams
 
     with open(path, 'r') as f:
         data = json.load(f)
@@ -49,12 +51,12 @@ def get_win_rates_from_wins_losses():
             wins = record["wins"]
             losses = record["losses"]
             total = wins + losses
-            win_rate = wins / total if total > 0 else 0
+            win_rate = (wins + 1) / (wins + losses + 2) if total > 0 else 0
             team_win_rate[team] = win_rate
 
-        output_path = "./team_win_rates.json"
+        output_path = "./team_scores.json"
         with open(output_path, 'w') as output:
             json.dump(team_win_rate, output)
             output.close()
 
-get_win_rates_from_wins_losses()
+get_scores_from_wins_losses()
